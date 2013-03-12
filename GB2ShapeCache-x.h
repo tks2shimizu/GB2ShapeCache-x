@@ -48,54 +48,54 @@ namespace gbox2d {
      * PhysicsEditor and storing them in a cache for later generating bodies
      */
     class GB2ShapeCache {
-	public:
-		// Static interface
-		static GB2ShapeCache* sharedGB2ShapeCache(void);
-		
-	public:
-		/**
+    public:
+        // Static interface
+        static GB2ShapeCache* sharedGB2ShapeCache(void);
+        
+    public:
+        /**
          * Intialize the class and properties to their defaults
          * @return true if successful
          */
-		bool init();
-		
-		/**
+        bool init();
+        
+        /**
          * Load shapes stored in the plist specified
          * @param plist the filename of the plist
          */
-		void addShapesWithFile(const std::string &plist);
+        void addShapesWithFile(const std::string &plist);
         
-		/**
+        /**
          * Add fixtures for the specified shape to the given body
          * @param body the body
          * @param shape the shape name
          */
-		void addFixturesToBody(b2Body *body, const std::string &shape);
-		
-		/**
+        void addFixturesToBody(b2Body *body, const std::string &shape);
+        
+        /**
          * Returns the anchor point for the shape with the name given
          * @param shape the name of the shape
          * @return the anchor point
          */
-		cocos2d::CCPoint anchorPointForShape(const std::string &shape);
-		
-		/**
+        cocos2d::CCPoint anchorPointForShape(const std::string &shape);
+        
+        /**
          * Reset the cache
          */
-		void reset();
-		
-		/**
+        void reset();
+        
+        /**
          * Gets the pixel to meter ratio
          * @return the Pixel to meter ratio
          */
-		float getPtmRatio() { return ptmRatio; }
-		
-		~GB2ShapeCache() {}
-		
-	private:
-		std::map<std::string, BodyDef *> shapeObjects; //!< the map of shape objects loaded from the plist
-		GB2ShapeCache(void) {}
-		float ptmRatio; //!< the pixel to meter ratio
+        float getPtmRatio() { return ptmRatio; }
+        
+        ~GB2ShapeCache() {}
+        
+    private:
+        std::map<std::string, BodyDef *> shapeObjects; //!< the map of shape objects loaded from the plist
+        GB2ShapeCache(void) {}
+        float ptmRatio; //!< the pixel to meter ratio
     };
     
 }
