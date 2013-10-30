@@ -37,7 +37,7 @@
 //
 
 #include "GB2ShapeCache-x.h"
-#include "Box2D.h"
+#include "Box2D/Box2D.h"
 #include "cocoa/CCNS.h"
 
 using namespace cocos2d;
